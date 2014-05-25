@@ -1,0 +1,16 @@
+{
+  "name": "garion.io",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Noah Goodrich"
+  },
+  "ignore": [
+    "node_modules",
+    "public/bower"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.0.2",
+    "angular": "~1.2.16"
+  }
+}
