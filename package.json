@@ -1,7 +1,7 @@
 {
   "name": "garion.io",
   "version": "0.0.1",
-  "authors:" [{
+  "authors:" : [{
     "name": "Noah Goodrich"
   }]
 }
