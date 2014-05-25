@@ -11,6 +11,8 @@
   ],
   "dependencies": {
     "bootstrap-sass": "~3.0.2",
-    "angular": "~1.2.16"
+    "angular": "~1.2.16",
+    "angular-bootstrap": "~0.11.0",
+    "angular-sanitize": "~1.2.16"
   }
 }
