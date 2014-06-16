@@ -2,18 +2,23 @@
 var gulp = require('gulp');
 
 // Include Our Plugins
+var clean = require('gulp-clean');
+var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
-var concat = require('gulp-concat');
+var sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
 
 // Lint Task
 gulp.task('lint', function() {
     return gulp.src('./public/src/js/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
+});
+
+gulp.task('clean', function() {
+  return gulp.src('public/dist', { read: false})
+    .pipe(clean());
 });
 
 // Compile Our Sass
@@ -23,7 +28,6 @@ gulp.task('sass', function() {
       .src('./public/bower/bootstrap-sass/lib/*.scss')
       .pipe(sass())
       .pipe(concat('bootstrap.css'))
-      .pipe(gulp.dest('./public/src/scss'))
       .pipe(gulp.dest('./public/dist/css'));
   };
 
@@ -61,4 +65,5 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['lint', 'sass', 'scripts']);
+//gulp.task('watch', ['default', 'watch']);
