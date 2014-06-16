@@ -1,0 +1,9 @@
+[
+  {
+    "name": "scotty",
+    "script": "./app.js",
+    "exec_mode": "cluster_mode",
+    "max": "2",
+    "port": 3000
+  }
+]
