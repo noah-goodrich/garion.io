@@ -9,6 +9,11 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
+var paths = {
+  scss: './public/src/scss/*.scss',
+  scripts: ['./public/src/js/app.js', './public/src/js/**/*.js']
+};
+
 // Lint Task
 gulp.task('lint', function() {
     return gulp.src('./public/src/js/**/*.js')
@@ -40,7 +45,7 @@ gulp.task('sass', function() {
 
   var site = function() {
     return gulp
-      .src('./public/src/scss/*.scss')
+      .src(paths.scss)
       .pipe(sass())
       .pipe(concat('site.css'))
       .pipe(gulp.dest('./public/dist/css'));
@@ -59,19 +64,19 @@ gulp.task('scripts', function() {
     .pipe(concat('plugins.js'))
     .pipe(gulp.dest('./public/dist/js'));
 
-  return gulp.src('./public/src/js/**/*.js')
+  return gulp.src(paths.scripts)
         .pipe(concat('app.js'))
         .pipe(gulp.dest('./public/dist/js'));
 });
 
-// Watch Files For Changes
-gulp.task('watch', function() {
-    gulp.watch('./public/src/index.html', ['index']);
-    gulp.watch('./public/src/js/**/*.js', ['lint', 'scripts']);
-    gulp.watch('./public/src/scss/*.scss', ['sass']);
-});
-
-gulp.task('watch', ['default', 'watch']);
-
 // Default Task
 gulp.task('default', ['lint', 'index', 'sass', 'scripts']);
+
+// Watch Files For Changes
+gulp.task('watch', ['default'], function() {
+    gulp.watch('./public/src/index.html', ['index']);
+    gulp.watch(paths.scripts, ['lint', 'scripts']);
+    gulp.watch(paths.sass, ['sass']);
+});
+
+
