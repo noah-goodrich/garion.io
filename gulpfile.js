@@ -16,9 +16,16 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
+// Clean Task
 gulp.task('clean', function() {
   return gulp.src('public/dist', { read: false})
     .pipe(clean());
+});
+
+// Copy index.html
+gulp.task('index', function() {
+  return gulp.src('./public/src/index.html')
+    .pipe(gulp.dest('./public/dist'));
 });
 
 // Compile Our Sass
@@ -44,7 +51,6 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-
   gulp
     .src([
       './public/bower/jquery/query.js',
@@ -60,10 +66,12 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
+    gulp.watch('./public/src/index.html', ['index']);
     gulp.watch('./public/src/js/**/*.js', ['lint', 'scripts']);
     gulp.watch('./public/src/scss/*.scss', ['sass']);
 });
 
+gulp.task('watch', ['default', 'watch']);
+
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts']);
-//gulp.task('watch', ['default', 'watch']);
+gulp.task('default', ['lint', 'index', 'sass', 'scripts']);
