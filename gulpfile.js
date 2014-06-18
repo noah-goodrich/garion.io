@@ -60,6 +60,9 @@ gulp.task('scripts', function() {
     .src([
       './public/bower/jquery/query.js',
       './public/bower/angular/angular.js',
+      './public/bower/angular-route/angular-route.js',
+      './public/bower/angular-sanitize/angular-sanitize.js',
+      './public/bower/angular-data/dist/angular-data.js'
     ])
     .pipe(concat('plugins.js'))
     .pipe(gulp.dest('./public/dist/js'));
@@ -78,5 +81,3 @@ gulp.task('watch', ['default'], function() {
     gulp.watch(paths.scripts, ['lint', 'scripts']);
     gulp.watch(paths.sass, ['sass']);
 });
-
-

@@ -18,6 +18,7 @@
     "bluebird": "^1.2.4",
     "dependable": "^0.2.5",
     "express": "^4.3.1",
+    "gulp-html2js": "^0.1.0",
     "request": "^2.36.0"
   }
 }
