@@ -8,6 +8,7 @@
     "gulp": "^3.8.0",
     "gulp-clean": "^0.3.0",
     "gulp-concat": "^2.2.0",
+    "gulp-html2js": "^0.1.0",
     "gulp-jshint": "^1.6.2",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^0.7.2",
@@ -18,7 +19,6 @@
     "bluebird": "^1.2.4",
     "dependable": "^0.2.5",
     "express": "^4.3.1",
-    "gulp-html2js": "^0.1.0",
     "request": "^2.36.0"
   }
 }

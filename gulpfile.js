@@ -74,6 +74,7 @@ gulp.task('scripts', function() {
     gulp
     .src([
       './public/bower/jquery/query.js',
+      //'./public/bower/bootstrap-sass/dist/js/bootstrap.js',
       './public/bower/angular/angular.js',
       './public/bower/angular-route/angular-route.js',
       './public/bower/angular-sanitize/angular-sanitize.js',
