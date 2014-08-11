@@ -19,6 +19,7 @@
     "bluebird": "^1.2.4",
     "dependable": "^0.2.5",
     "express": "^4.3.1",
+    "reheat": "^1.0.0-beta.7",
     "request": "^2.36.0"
   }
 }
